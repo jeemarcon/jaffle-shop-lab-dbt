@@ -1,0 +1,20 @@
+sources:
+  - name: jaffle_shop
+    database: raw
+    schema: jaffle_shop
+    config:
+      freshness: #freshness serve para alertar quando dados param de chegar em produção.
+        warn_after:
+          count: 12
+          period: hour #aviso se não chegou dado novo em 12h
+        error_after:
+          count: 1
+          period: day #erro se nao chegou nada novo em 1 dia 
+      loaded_at_field: _etl_loaded_at
+    tables:
+      - name: customers 
+        config:
+          freshness: null
+      - name: orders
+        config:
+          freshness: null #vamos deixar desativado por mostivos de nao atualizar frequente neste lab 
