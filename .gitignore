@@ -3,3 +3,4 @@
 target/
 dbt_packages/
 logs/
+codegen_source_generate
