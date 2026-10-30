@@ -15,6 +15,12 @@ sources:
       - name: customers 
         config:
           freshness: null
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
+              
       - name: orders
         config:
-          freshness: null #vamos deixar desativado por mostivos de nao atualizar frequente neste lab 
+          freshness: null #vamos deixar desativado por motivos de nao atualizar frequente neste lab 
