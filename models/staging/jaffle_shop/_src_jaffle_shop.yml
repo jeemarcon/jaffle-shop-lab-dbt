@@ -2,6 +2,7 @@ sources:
   - name: jaffle_shop
     database: raw
     schema: jaffle_shop
+    description: A clone of a Snowflake application database.
     config:
       freshness: #freshness serve para alertar quando dados param de chegar em produção.
         warn_after:
@@ -13,14 +14,24 @@ sources:
       loaded_at_field: _etl_loaded_at
     tables:
       - name: customers 
+        description: Raw customer data.
         config:
           freshness: null
         columns:
           - name: id
+            description: Primary key for customer data.
             data_tests:
               - unique
               - not_null
               
       - name: orders
+        description: Raw orders data.
         config:
           freshness: null #vamos deixar desativado por motivos de nao atualizar frequente neste lab 
+        columns:
+          - name: id
+            description: Primary key for orders data.
+            data_tests:
+              - unique
+              - not_null
+              
