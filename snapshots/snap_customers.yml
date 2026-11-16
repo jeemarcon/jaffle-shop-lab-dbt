@@ -1,0 +1,8 @@
+snapshots:
+  - name: snap_customers
+    relation: source('jaffle_shop', 'customers')
+    config:
+      schema: snapshots
+      unique_key: id
+      strategy: check
+      check_cols: [first_name, last_name]
