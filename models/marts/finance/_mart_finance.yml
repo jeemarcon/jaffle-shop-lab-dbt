@@ -1,0 +1,15 @@
+models:
+  - name: fct_orders
+    description: "Um pedido por linha, com o valor pago (soma só dos pagamentos com sucesso)."
+    columns:
+      - name: order_id
+        description: "Chave do pedido. É o grão da tabela."
+        data_tests:
+          - unique
+          - not_null
+      - name: order_date
+        description: "Data do pedido."
+      - name: amount
+        description: "Valor pago com sucesso. Zero se não houve pagamento aprovado."
+        data_tests:
+          - not_null
