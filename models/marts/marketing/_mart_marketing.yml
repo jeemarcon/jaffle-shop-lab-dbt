@@ -1,0 +1,9 @@
+models:
+  - name: dim_customers
+    description: "Um cliente por linha, com atributos para análise de marketing."
+    columns:
+      - name: customer_id
+        description: "Chave do cliente. É o grão da tabela."
+        data_tests:
+          - unique
+          - not_null

@@ -1,0 +1,10 @@
+models:
+  - name: stg_stripe__payment
+    description: "Pagamentos da Stripe, um por linha, valor em dólares."
+    columns:
+      - name: payment_amount
+        description: "Valor do pagamento em dólares."
+        data_tests:
+          - not_below:
+              arguments:
+                min_value: 0
